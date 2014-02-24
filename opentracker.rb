@@ -15,6 +15,8 @@ class Opentracker < Formula
   depends_on 'libowfat' => :build
 
   def install
+    libowfat_headers = "#{Formula["libowfat"].opt_include}/libowfat"
+
     features = []
     features << "-DWANT_FULLSCRAPE" if build.with? "full-scrape"
     features << "-DWANT_V6" if build.with? "ipv6"
@@ -25,7 +27,7 @@ class Opentracker < Formula
     features << "-DWANT_DEV_RANDOM" if build.with? "dev-random"
     features = features.join(' ')
 
-    system "make", "opentracker", "FEATURES=#{features}"
+    system "make", "opentracker", "FEATURES=#{features}", "LIBOWFAT_HEADERS=#{libowfat_headers}"
     bin.install "opentracker"
   end
 end
