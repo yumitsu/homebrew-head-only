@@ -11,9 +11,7 @@ class Darwinbuild < Formula
   depends_on :xcode # For working xcodebuild.
 
   def install
-    ENV.delete('CC')
-    ENV.delete('LD')
-    system "xcodebuild", "-configuration", "Release", "install", "DSTROOT=/", "PREFIX=#{prefix}", "SYMROOT=build"
+    xcodebuild "-configuration", "Release", "install", "DSTROOT=/", "PREFIX=#{prefix}", "SYMROOT=build"
   end
 end
 
