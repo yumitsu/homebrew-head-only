@@ -13,7 +13,7 @@ class Opentracker < Formula
   def install
     # First libowfat must be compiled and installed where opentracker is expecting it
     libowfat_include = Pathname.new(pwd) + 'libowfat'
-    Libowfat.new.brew do
+    resource("libowfat").stage do
       system "make", "install", "INCLUDEDIR=#{libowfat_include}", "LIBDIR=#{libowfat_include}", "MAN3DIR=."
     end
 
