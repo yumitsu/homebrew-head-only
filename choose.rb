@@ -25,6 +25,6 @@ class Choose < Formula
     # There isn't really a better test than that the executable exists
     # and is executable because you can't run it without producing an
     # interactive selection ui.
-    File.exists?("#{bin}/choose") && File.executable?("#{bin}/choose")
+    File.executable?("#{bin}/choose")
   end
 end
