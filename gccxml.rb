@@ -2,7 +2,7 @@ require 'formula'
 
 class Gccxml < Formula
   homepage 'http://gccxml.github.io/'
-  head 'https://github.com/gccxml/gccxml/tarball/master'
+  head 'https://github.com/gccxml/gccxml.git'
 
   depends_on 'cmake' => :build
 
