@@ -1,8 +1,8 @@
-require 'formula'
+require "formula"
 
 class Opentracker < Formula
-  head 'cvs://:pserver:anoncvs:@cvs.erdgeist.org:/home/cvsroot:opentracker'
-  homepage 'http://erdgeist.org/arts/software/opentracker/'
+  homepage "http://erdgeist.org/arts/software/opentracker/"
+  head "cvs://:pserver:anoncvs:@cvs.erdgeist.org:/home/cvsroot:opentracker"
 
   option "without-full-scrape", "Enable full scrape"
   option "with-ipv6", "IPv6-only tracker"
@@ -12,7 +12,7 @@ class Opentracker < Formula
   option "with-syslog", "Use syslog"
   option "with-dev-random", "Use /dev/random"
 
-  depends_on 'libowfat' => :build
+  depends_on "libowfat" => :build
 
   def install
     libowfat_headers = "#{Formula["libowfat"].opt_include}/libowfat"
@@ -25,9 +25,8 @@ class Opentracker < Formula
     features << "-DWANT_COMPRESSION_GZIP" if build.with? "gzip"
     features << "-DWANT_SYSLOGS" if build.with? "syslog"
     features << "-DWANT_DEV_RANDOM" if build.with? "dev-random"
-    features = features.join(' ')
 
-    system "make", "opentracker", "FEATURES=#{features}", "LIBOWFAT_HEADERS=#{libowfat_headers}"
+    system "make", "opentracker", "FEATURES=#{features.join(" ")}", "LIBOWFAT_HEADERS=#{libowfat_headers}"
     bin.install "opentracker"
   end
 end
