@@ -4,12 +4,11 @@ class Otx < Formula
   homepage "https://github.com/darwin/otx"
   head "https://github.com/darwin/otx.git"
 
-  depends_on :xcode # For working xcodebuild.
+  depends_on :xcode => :build
 
   def install
-    xcodebuild 'SYMROOT=build'
-    build = buildpath/'build/Release'
-    bin.install build/"otx"
-    prefix.install build/"otx.app"
+    xcodebuild "SYMROOT=build"
+    bin.install "build/Release/otx"
+    prefix.install "build/Release/otx.app"
   end
 end
