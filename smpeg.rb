@@ -8,9 +8,9 @@ class Smpeg < Formula
   # Or, if the author tags a stable release, use that
   head 'svn://svn.icculus.org/smpeg/trunk', :revision => '398'
 
-  depends_on :autoconf
-  depends_on :automake
-  depends_on :libtool
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on 'pkg-config' => :build
   depends_on 'sdl'
   depends_on 'gtk+'
