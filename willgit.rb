@@ -1,7 +1,7 @@
 require 'formula'
 
 class Willgit < Formula
-  homepage 'http://git-wt-commit.rubyforge.org/'
+  homepage 'http://gitorious.org/willgit/mainline/'
   head 'git://gitorious.org/willgit/mainline.git'
 
   def install
