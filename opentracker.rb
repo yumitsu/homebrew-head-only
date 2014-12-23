@@ -2,7 +2,7 @@ require "formula"
 
 class Opentracker < Formula
   homepage "http://erdgeist.org/arts/software/opentracker/"
-  head "cvs://:pserver:anoncvs:@cvs.erdgeist.org:/home/cvsroot:opentracker"
+  head ":pserver:anoncvs:@cvs.erdgeist.org:/home/cvsroot", :using => :cvs
 
   option "without-full-scrape", "Enable full scrape"
   option "with-ipv6", "IPv6-only tracker"
