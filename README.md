@@ -11,14 +11,14 @@ There are a few problems with head-only software:
 Contact the software's developer and ask them to tag a stable release. If the software has a stable release and works reliably, feel free to submit a pull request at the main Homebrew repository.
 
 ## How do I install these formulae?
-`brew install homebrew/head-only/<formula>`
+`brew install --HEAD homebrew/head-only/<formula>`
 
-Or `brew tap homebrew/head-only` and then `brew install <formula>`.
+Or `brew tap homebrew/head-only` and then `brew install --HEAD <formula>`
 
 Or install via URL (which will not receive updates):
 
 ```
-brew install https://raw.githubusercontent.com/Homebrew/homebrew-head-only/master/<formula>.rb
+brew install --HEAD https://raw.githubusercontent.com/Homebrew/homebrew-head-only/master/<formula>.rb
 ```
 
 ## Documentation
