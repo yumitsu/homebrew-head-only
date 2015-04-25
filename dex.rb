@@ -6,8 +6,8 @@ class Dex < Formula
 
   def install
     args = ["prefix=#{prefix}", "VERSION=head"]
-    system "make", *args, "all"
-    system "make", *args, "install"
+    system "make", "all", *args
+    system "make", "install", *args
   end
 
   test do
